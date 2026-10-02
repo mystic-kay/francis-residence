@@ -105,7 +105,7 @@ def pull(free,path):
 FLOORS={0:0.0,1:3.15,2:6.15}
 # Rooms in visiting order: (floor, id, name, plan rectangle x0,y0,x1,y1, caption)
 ROOMS=[
- (0,'living','Living room',(6.3,7.9,10.3,13.2),'Welcome in. The living room: tub armchairs, a contemporary sofa and a marble TV wall. Tap any glowing dot or surface to change its finish.'),
+ (0,'living','Living room',(6.3,7.9,10.3,13.2),'Welcome in. The living room: tub armchairs, a contemporary sofa and a marble TV wall. Tap any glowing dot to change a finish.'),
  (0,'niche','Gallery shelf',(8.4,13.5,10.2,14.8),'Between living and dining, a walnut credenza, floating shelves and a family photo gallery.'),
  (0,'dining','Dining room',(6.4,15.3,10.2,18.5),'Dining for six: smoked walnut on a sculpted fin base, mustard bouclé chairs, plaster pendants above.'),
  (0,'kitchen','Kitchen',(2.5,15.3,6.0,18.5),'The kitchen: shaker cabinetry, black stone worktops and walnut counter stools. Cabinet, worktop and hardware finishes can all be changed.'),
