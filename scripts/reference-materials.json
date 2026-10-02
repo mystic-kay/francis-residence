@@ -1,0 +1,367 @@
+{
+  "walls": {
+    "name": "Chalk white",
+    "color": "#edece5",
+    "roughness": 0.88,
+    "finish": "chalk"
+  },
+  "floor": {
+    "name": "Warm European oak boards",
+    "color": "#e6c8a3",
+    "roughness": 0.46,
+    "texture": "oak_wood_planks",
+    "scale": 0.65,
+    "finish": "luxoak"
+  },
+  "wood": {
+    "name": "Natural oak",
+    "color": "#ffffff",
+    "roughness": 0.65,
+    "texture": "oak_veneer_01",
+    "scale": 1,
+    "finish": "oak"
+  },
+  "fabric": {
+    "name": "Natural linen",
+    "color": "#d3ccbc",
+    "roughness": 0.96,
+    "texture": "woven",
+    "scale": 8,
+    "finish": "linen"
+  },
+  "accent": {
+    "name": "Charcoal Wallmaster stucco",
+    "color": "#2a2b2d",
+    "roughness": 0.9,
+    "texture": "white_stucco",
+    "scale": 0.5,
+    "finish": "charcoalstucco"
+  },
+  "doors": {
+    "name": "Smoked oak",
+    "color": "#74604c",
+    "roughness": 0.7,
+    "texture": "oak_veneer_01",
+    "scale": 1,
+    "finish": "walnut"
+  },
+  "cabinet": {
+    "name": "Warm white lacquer",
+    "color": "#eeeee8",
+    "roughness": 0.36,
+    "finish": "shaker"
+  },
+  "counter": {
+    "name": "Polished black stone",
+    "color": "#181b1e",
+    "roughness": 0.17,
+    "texture": "marble_01",
+    "scale": 0.7,
+    "finish": "blackstone"
+  },
+  "hardware": {
+    "name": "Satin black",
+    "color": "#202327",
+    "roughness": 0.37,
+    "metalness": 0.65,
+    "finish": "blackmetal"
+  },
+  "bedwall": {
+    "name": "Sage green",
+    "color": "#697765",
+    "roughness": 0.82,
+    "finish": "sagepaint"
+  },
+  "bedding": {
+    "name": "Ivory cotton",
+    "color": "#eee9de",
+    "roughness": 0.96,
+    "texture": "woven",
+    "scale": 8,
+    "finish": "ivory"
+  },
+  "headboard": {
+    "name": "Natural linen",
+    "color": "#d3ccbc",
+    "roughness": 0.96,
+    "texture": "woven",
+    "scale": 8,
+    "finish": "linen"
+  },
+  "bedfloor": {
+    "name": "Honey oak boards",
+    "color": "#f6e8d4",
+    "roughness": 0.58,
+    "texture": "oak_wood_planks",
+    "scale": 0.65,
+    "finish": "oakfloor"
+  },
+  "roof": {
+    "name": "Satin black",
+    "color": "#202327",
+    "roughness": 0.37,
+    "metalness": 0.65,
+    "finish": "blackmetal"
+  },
+  "paving": {
+    "name": "Grey stone paving",
+    "color": "#d6d7d4",
+    "roughness": 0.9,
+    "texture": "concrete_pavement",
+    "scale": 0.7,
+    "finish": "paver"
+  },
+  "lawn": {
+    "name": "Natural grass",
+    "color": "#b8cd98",
+    "roughness": 1,
+    "texture": "grass_ground",
+    "scale": 0.6,
+    "finish": "grass"
+  },
+  "pergolaframe": {
+    "name": "Satin black",
+    "color": "#202327",
+    "roughness": 0.37,
+    "metalness": 0.65,
+    "finish": "blackmetal"
+  },
+  "pergolaglass": {
+    "name": "Smoked grey glass",
+    "color": "#667c83",
+    "roughness": 0.1,
+    "opacity": 0.28,
+    "finish": "smokeglass"
+  },
+  "coping": {
+    "name": "Charcoal render",
+    "color": "#303033",
+    "roughness": 0.83,
+    "finish": "charcoal"
+  },
+  "featurewall": {
+    "name": "Charcoal Wallmaster stucco",
+    "color": "#2a2b2d",
+    "roughness": 0.9,
+    "texture": "white_stucco",
+    "scale": 0.5,
+    "finish": "charcoalstucco"
+  },
+  "balconyglass": {
+    "name": "Clear glass",
+    "color": "#cad9db",
+    "roughness": 0.08,
+    "opacity": 0.16,
+    "finish": "clearglass"
+  },
+  "balconyrail": {
+    "name": "Brushed chrome",
+    "color": "#bfc4c8",
+    "roughness": 0.23,
+    "metalness": 0.95,
+    "finish": "chrome"
+  },
+  "livingfabric": {
+    "name": "Natural soft upholstery",
+    "color": "#c3b39d",
+    "roughness": 0.94,
+    "texture": "curly_teddy_natural",
+    "scale": 3.33,
+    "finish": "softupholstery"
+  },
+  "livingrug": {
+    "name": "Natural linen",
+    "color": "#d3ccbc",
+    "roughness": 0.96,
+    "texture": "woven",
+    "scale": 8,
+    "finish": "linen"
+  },
+  "tvunit": {
+    "name": "Glossy porcelain white",
+    "color": "#f2eee6",
+    "roughness": 0.12,
+    "clearcoat": 0.9,
+    "finish": "glosswhite"
+  },
+  "tvwall": {
+    "name": "White veined marble",
+    "color": "#ffffff",
+    "roughness": 0.24,
+    "texture": "Marble012",
+    "scale": 0.45,
+    "finish": "marble"
+  },
+  "coffeetop": {
+    "name": "White veined marble",
+    "color": "#ffffff",
+    "roughness": 0.24,
+    "texture": "Marble012",
+    "scale": 0.45,
+    "finish": "marble"
+  },
+  "interiormetal": {
+    "name": "Brushed brass",
+    "color": "#b99755",
+    "roughness": 0.3,
+    "metalness": 0.86,
+    "finish": "brass"
+  },
+  "curtains": {
+    "name": "Ivory cotton",
+    "color": "#eee9de",
+    "roughness": 0.96,
+    "texture": "woven",
+    "scale": 8,
+    "finish": "ivory"
+  },
+  "livingfloor": {
+    "name": "Warm European oak boards",
+    "color": "#e6c8a3",
+    "roughness": 0.46,
+    "texture": "oak_wood_planks",
+    "scale": 0.65,
+    "finish": "luxoak"
+  },
+  "livingpillows": {
+    "name": "Sage cotton cushions",
+    "color": "#75836d",
+    "roughness": 0.9,
+    "texture": "cotton_jersey",
+    "scale": 3.33,
+    "finish": "cottonsage"
+  },
+  "diningfabric": {
+    "name": "Mustard boucl\u00e9",
+    "color": "#a08a3a",
+    "roughness": 0.97,
+    "texture": "curly_teddy_natural",
+    "scale": 3.33,
+    "finish": "mustardboucle"
+  },
+  "diningwood": {
+    "name": "Smoked walnut",
+    "color": "#9c7652",
+    "roughness": 0.55,
+    "texture": "oak_veneer_01",
+    "scale": 1,
+    "finish": "smokedwalnut"
+  },
+  "ceiling": {
+    "name": "Matte ceiling white",
+    "color": "#f4f2ec",
+    "roughness": 0.95,
+    "finish": "ceilingwhite"
+  },
+  "skirting": {
+    "name": "Satin warm white",
+    "color": "#f1ede4",
+    "roughness": 0.42,
+    "finish": "satinwhite"
+  },
+  "gate": {
+    "name": "Smoked walnut",
+    "color": "#9c7652",
+    "roughness": 0.55,
+    "texture": "oak_veneer_01",
+    "scale": 1,
+    "finish": "smokedwalnut"
+  },
+  "gateframe": {
+    "name": "Satin black",
+    "color": "#202327",
+    "roughness": 0.37,
+    "metalness": 0.65,
+    "finish": "blackmetal"
+  },
+  "render": {
+    "name": "White Wallmaster stucco",
+    "color": "#f4f1ea",
+    "roughness": 0.93,
+    "texture": "white_stucco",
+    "scale": 0.5,
+    "finish": "whitestucco"
+  },
+  "frontdoor": {
+    "name": "Matte black powder-coat",
+    "color": "#1a1b1d",
+    "roughness": 0.58,
+    "metalness": 0.35,
+    "finish": "matteblack"
+  },
+  "frontdoorframe": {
+    "name": "Satin black",
+    "color": "#202327",
+    "roughness": 0.37,
+    "metalness": 0.65,
+    "finish": "blackmetal"
+  },
+  "frontdoorhardware": {
+    "name": "Brushed brass",
+    "color": "#b99755",
+    "roughness": 0.3,
+    "metalness": 0.86,
+    "finish": "brass"
+  },
+  "boundarywall": {
+    "name": "Ndarugu machine-cut, rock-faced",
+    "color": "#cbb184",
+    "roughness": 0.92,
+    "texture": "concrete_block_wall",
+    "scale": 0.5,
+    "finish": "ndarugurock"
+  },
+  "boundarypillar": {
+    "name": "Mixed stone cladding",
+    "color": "#c4b08c",
+    "roughness": 0.93,
+    "texture": "rough_block_wall",
+    "scale": 0.333,
+    "finish": "stonecladding"
+  },
+  "boundarycoping": {
+    "name": "Precast concrete",
+    "color": "#cfccc5",
+    "roughness": 0.9,
+    "texture": "concrete_pavement",
+    "scale": 0.7,
+    "finish": "precast"
+  },
+  "watertank": {
+    "name": "Black HDPE, UV-stabilised",
+    "color": "#1c1d1f",
+    "roughness": 0.42,
+    "finish": "tankblack"
+  },
+  "tankbase": {
+    "name": "Precast concrete",
+    "color": "#cfccc5",
+    "roughness": 0.9,
+    "texture": "concrete_pavement",
+    "scale": 0.7,
+    "finish": "precast"
+  },
+  "road": {
+    "name": "Asphalt",
+    "color": "#5a5c5e",
+    "roughness": 0.95,
+    "texture": "concrete_pavement",
+    "scale": 0.25,
+    "finish": "asphalt"
+  },
+  "tapware": {
+    "name": "Brushed chrome",
+    "color": "#bfc4c8",
+    "roughness": 0.23,
+    "metalness": 0.95,
+    "finish": "chrome"
+  },
+  "bathtile": {
+    "name": "Ivory porcelain, 600 mm",
+    "color": "#efe9df",
+    "roughness": 0.35,
+    "texture": "interior_tiles",
+    "scale": 0.39,
+    "finish": "porcelaintile"
+  }
+}

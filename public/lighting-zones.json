@@ -1,0 +1,275 @@
+{
+  "zones": [
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "level": 0,
+      "fixtureFaces": 1104,
+      "switchPlates": 12,
+      "center": [
+        4.1899999999999995,
+        16.99,
+        2.62
+      ],
+      "size": [
+        3.8999999999999995,
+        3.8199999999999985
+      ]
+    },
+    {
+      "id": "dining",
+      "name": "Dining room",
+      "level": 0,
+      "fixtureFaces": 2958,
+      "switchPlates": 12,
+      "center": [
+        8.295,
+        16.99,
+        2.62
+      ],
+      "size": [
+        4.31,
+        3.8199999999999985
+      ]
+    },
+    {
+      "id": "living",
+      "name": "Living room",
+      "level": 0,
+      "fixtureFaces": 1600,
+      "switchPlates": 22,
+      "center": [
+        8.57,
+        10.48,
+        2.62
+      ],
+      "size": [
+        4.86,
+        5.76
+      ]
+    },
+    {
+      "id": "corridor",
+      "name": "Corridor & lobby",
+      "level": 0,
+      "fixtureFaces": 988,
+      "switchPlates": 74,
+      "center": [
+        4.625,
+        14.219999999999999,
+        2.62
+      ],
+      "size": [
+        11.649999999999999,
+        1.7200000000000006
+      ]
+    },
+    {
+      "id": "guest",
+      "name": "Guest bedroom",
+      "level": 0,
+      "fixtureFaces": 1668,
+      "switchPlates": 12,
+      "center": [
+        0.5200000000000001,
+        16.99,
+        2.62
+      ],
+      "size": [
+        3.4400000000000004,
+        3.8199999999999985
+      ]
+    },
+    {
+      "id": "hall",
+      "name": "Hall & study",
+      "level": 0,
+      "fixtureFaces": 988,
+      "switchPlates": 24,
+      "center": [
+        0.57,
+        11.18,
+        2.62
+      ],
+      "size": [
+        3.54,
+        4.359999999999999
+      ]
+    },
+    {
+      "id": "stair",
+      "name": "Stair hall",
+      "level": 0,
+      "fixtureFaces": 520,
+      "switchPlates": 36,
+      "center": [
+        4.24,
+        11.18,
+        2.62
+      ],
+      "size": [
+        3.8,
+        4.359999999999999
+      ]
+    },
+    {
+      "id": "primary",
+      "name": "Primary suite",
+      "level": 1,
+      "fixtureFaces": 2716,
+      "switchPlates": 48,
+      "center": [
+        8.87,
+        10.5,
+        5.62
+      ],
+      "size": [
+        5.46,
+        5.800000000000001
+      ]
+    },
+    {
+      "id": "bed1",
+      "name": "Bedroom one",
+      "level": 1,
+      "fixtureFaces": 1668,
+      "switchPlates": 12,
+      "center": [
+        4.24,
+        16.99,
+        5.62
+      ],
+      "size": [
+        3.8,
+        3.8199999999999985
+      ]
+    },
+    {
+      "id": "study",
+      "name": "Study",
+      "level": 1,
+      "fixtureFaces": 1702,
+      "switchPlates": 34,
+      "center": [
+        8.295,
+        16.99,
+        5.62
+      ],
+      "size": [
+        4.31,
+        3.8199999999999985
+      ]
+    },
+    {
+      "id": "bed2",
+      "name": "Bedroom two",
+      "level": 1,
+      "fixtureFaces": 1220,
+      "switchPlates": 12,
+      "center": [
+        1.15,
+        11.2,
+        5.62
+      ],
+      "size": [
+        4.7,
+        4.4
+      ]
+    },
+    {
+      "id": "upperhall",
+      "name": "First-floor hall",
+      "level": 1,
+      "fixtureFaces": 0,
+      "switchPlates": 0,
+      "center": [
+        4.82,
+        11.2,
+        5.62
+      ],
+      "size": [
+        2.6399999999999997,
+        4.4
+      ]
+    },
+    {
+      "id": "landing",
+      "name": "Landing",
+      "level": 1,
+      "fixtureFaces": 1468,
+      "switchPlates": 98,
+      "center": [
+        4.625,
+        14.24,
+        5.62
+      ],
+      "size": [
+        11.649999999999999,
+        1.6799999999999997
+      ]
+    },
+    {
+      "id": "westsuite",
+      "name": "West suite & bath",
+      "level": 1,
+      "fixtureFaces": 752,
+      "switchPlates": 36,
+      "center": [
+        0.57,
+        16.99,
+        5.62
+      ],
+      "size": [
+        3.54,
+        3.8199999999999985
+      ]
+    },
+    {
+      "id": "roofdining",
+      "name": "Top-floor dining",
+      "level": 2,
+      "fixtureFaces": 756,
+      "switchPlates": 72,
+      "center": [
+        4.625,
+        16.35,
+        8.6
+      ],
+      "size": [
+        11.649999999999999,
+        5.9
+      ]
+    },
+    {
+      "id": "terrace",
+      "name": "Roof terrace & pergola",
+      "level": 2,
+      "fixtureFaces": 2030,
+      "switchPlates": 0,
+      "center": [
+        5.2,
+        10.2,
+        8.6
+      ],
+      "size": [
+        13.6,
+        6.4
+      ]
+    },
+    {
+      "id": "exterior",
+      "name": "Garden & fa\u00e7ade",
+      "level": null,
+      "fixtureFaces": 2811,
+      "switchPlates": 0
+    }
+  ],
+  "gate": {
+    "x0": 10.84,
+    "x1": 15.54,
+    "y": -2.5,
+    "bottom": -0.55,
+    "top": 2.3,
+    "slide": 4.8
+  }
+}

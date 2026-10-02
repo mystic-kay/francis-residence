@@ -1,0 +1,48 @@
+{
+  "style": "Warm contemporary luxury",
+  "armchairs": [
+    {
+      "center": [
+        7.78,
+        8.87
+      ],
+      "forward": [
+        0.14749185740947723,
+        0.9890632033348083,
+        0.0
+      ],
+      "target": [
+        8.12,
+        11.15
+      ]
+    },
+    {
+      "center": [
+        9.31,
+        8.87
+      ],
+      "forward": [
+        -0.46269896626472473,
+        0.8865154981613159,
+        0.0
+      ],
+      "target": [
+        8.12,
+        11.15
+      ]
+    }
+  ],
+  "tvScreenMetres": [
+    1.925,
+    1.083
+  ],
+  "mediaCabinet": "Floating glossy white, handleless fronts",
+  "art": "Original geometric relief pieces in living, dining and bedrooms",
+  "removedFaces": {
+    "details": 118,
+    "fabric": 5530,
+    "lighting": 470,
+    "wood": 1334
+  },
+  "garden": "Unchanged from the user-marked layout"
+}

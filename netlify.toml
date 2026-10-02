@@ -1,0 +1,18 @@
+# Static site: build with Vite and publish dist/. Models and textures are fingerprint-free, so cache them for a
+# week with revalidation; hashed JS/CSS bundles are immutable.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[headers]]
+  for = "/models/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+[[headers]]
+  for = "/textures/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

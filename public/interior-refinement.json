@@ -1,0 +1,524 @@
+{
+  "armchairs": [
+    {
+      "center": [
+        7.78,
+        8.87
+      ],
+      "baseTop": 0.13,
+      "supportBottom": 0.07,
+      "supportTop": 0.37,
+      "cushionBottom": 0.275,
+      "seatTop": 0.455,
+      "backTop": 0.75,
+      "inwardForward": [
+        0.14749176800251007,
+        0.9890633225440979,
+        0.0
+      ],
+      "armFinish": "Rounded cap shoulders with fitted end-panel welts, continuous crown and side-panel seams, double stitching",
+      "fabricMapping": "Continuous wrap UVs without per-face projection switches"
+    },
+    {
+      "center": [
+        9.31,
+        8.87
+      ],
+      "baseTop": 0.13,
+      "supportBottom": 0.07,
+      "supportTop": 0.37,
+      "cushionBottom": 0.275,
+      "seatTop": 0.455,
+      "backTop": 0.75,
+      "inwardForward": [
+        -0.4626990854740143,
+        0.8865153789520264,
+        0.0
+      ],
+      "armFinish": "Rounded cap shoulders with fitted end-panel welts, continuous crown and side-panel seams, double stitching",
+      "fabricMapping": "Continuous wrap UVs without per-face projection switches"
+    }
+  ],
+  "pillows": [
+    {
+      "center": [
+        9.600000381469727,
+        10.289999961853027,
+        0.7480000257492065
+      ],
+      "size": [
+        0.2,
+        0.46,
+        0.46
+      ],
+      "restsOnSeat": true
+    },
+    {
+      "center": [
+        9.600000381469727,
+        10.84000015258789,
+        0.7480000257492065
+      ],
+      "size": [
+        0.2,
+        0.46,
+        0.46
+      ],
+      "restsOnSeat": true
+    },
+    {
+      "center": [
+        9.600000381469727,
+        12.229999542236328,
+        0.7480000257492065
+      ],
+      "size": [
+        0.2,
+        0.46,
+        0.46
+      ],
+      "restsOnSeat": true
+    }
+  ],
+  "artMounts": [
+    {
+      "room": "living",
+      "center": [
+        10.320000648498535,
+        11.25,
+        1.7400000095367432
+      ],
+      "normal": [
+        -1.0,
+        -0.0,
+        -0.0
+      ],
+      "width": 1.35,
+      "height": 0.95,
+      "solidWallSamples": 9
+    },
+    {
+      "room": "dining",
+      "center": [
+        4.599999904632568,
+        15.108999252319336,
+        1.6799999475479126
+      ],
+      "normal": [
+        -0.0,
+        1.0,
+        -0.0
+      ],
+      "width": 0.7,
+      "height": 0.85,
+      "solidWallSamples": 9
+    },
+    {
+      "room": "bedroom one",
+      "center": [
+        6.00499963760376,
+        17.200000762939453,
+        4.860000133514404
+      ],
+      "normal": [
+        -1.0,
+        -0.0,
+        -0.0
+      ],
+      "width": 0.65,
+      "height": 0.8,
+      "solidWallSamples": 9
+    },
+    {
+      "room": "bedroom two",
+      "center": [
+        0.15000000596046448,
+        13.343000411987305,
+        4.840000152587891
+      ],
+      "normal": [
+        -0.0,
+        -1.0,
+        -0.0
+      ],
+      "width": 0.65,
+      "height": 0.8,
+      "solidWallSamples": 9
+    }
+  ],
+  "flooring": "Warm European oak boards; marble retained on TV wall",
+  "garden": "Unchanged",
+  "dining": {
+    "roof": {
+      "room": "Terrace dining",
+      "table": "2.40 x 1.00 m smoked walnut top, 0.75 m high, on a sculptural base of vertical walnut fins",
+      "chairs": "6 chunky mustard boucl\u00e9 barrel chairs with deep seat cushions and square walnut corner posts",
+      "pendants": null,
+      "removedFaces": {
+        "fabric": 0,
+        "wood": 0
+      }
+    },
+    "kitchen": {
+      "room": "Dining beside the kitchen",
+      "table": "1.70 x 0.90 m smoked walnut top, 0.75 m high, on a sculptural base of vertical walnut fins",
+      "chairs": "6 chunky mustard boucl\u00e9 barrel chairs with deep seat cushions and square walnut corner posts",
+      "pendants": "3 organic plaster pebble pendants",
+      "removedFaces": {
+        "lighting": 590,
+        "wood": 636
+      }
+    }
+  },
+  "kitchen": {
+    "ceiling": {
+      "duplicateCeilingFaces": 48,
+      "hiddenTopFaces": 284,
+      "downlightFacesLowered": 280
+    },
+    "oldBulkheadFaces": 46,
+    "soffits": [
+      "west wall units",
+      "north-west corner units",
+      "north-east wall units",
+      "south wall units",
+      "dining-side wall units",
+      "peninsula overhead units"
+    ],
+    "skirtingSourceFaces": 84,
+    "stoolSourceFaces": 720,
+    "stools": "Three counter stools: boucl\u00e9 seat and wrapped back, square walnut legs and stretchers, brass foot bar",
+    "skirting": "100 mm painted boards with a chamfered top, aligned to the 100 mm kitchen plinths and held 1 mm off the wall"
+  },
+  "site": {
+    "art": {
+      "kitchenArtFaces": 1826,
+      "placeholderPanelFaces": 72,
+      "corridorPlaceholderFaces": 12,
+      "corridorArt": {
+        "center": [
+          5.099999904632568,
+          14.862000465393066,
+          1.625
+        ],
+        "size": [
+          1.0,
+          0.75
+        ],
+        "facing": "corridor (-y)"
+      }
+    },
+    "gate": {
+      "removedFaces": 12,
+      "openingMetres": 4.7,
+      "slideMetres": 4.8,
+      "slats": 40
+    }
+  },
+  "exteriorStucco": {
+    "split": {
+      "Level -1 | walls": [
+        661,
+        3712
+      ],
+      "Level 0 | walls": [
+        493,
+        6866
+      ],
+      "Level 1 | walls": [
+        213,
+        7002
+      ],
+      "Level 2 | walls": [
+        71,
+        826
+      ]
+    },
+    "darkFaces": 1386,
+    "pillarFaces": 826,
+    "pillarBoxes": 63,
+    "entranceBand": {
+      "recolouredFaces": 26,
+      "claddingPlates": [
+        "front",
+        "door side"
+      ]
+    }
+  },
+  "frontDoor": {
+    "removedSourceFaces": 3604,
+    "leaf": "62 mm flush steel, matte black, five horizontal reveals each face",
+    "handle": "1.44 m brushed-brass pull bar outside, 0.5 m pull inside, lock escutcheon",
+    "frame": "60 mm satin black lining the reveal"
+  },
+  "siteRealism": {
+    "boundary": {
+      "stoneWallFaces": 28,
+      "copingFaces": 484,
+      "pillarFaces": 342
+    },
+    "waterTank": {
+      "removedSourceFaces": 4772,
+      "standFaces": 72,
+      "screenFaces": 372,
+      "tank": "10,000 L vertical HDPE, 2.38 m diameter, corrugated, screw lid, brass outlet and overflow"
+    },
+    "bedroomTVs": {
+      "removedSourceFaces": 212,
+      "bedroomOne": "55-inch slim panel, 1.18 m centre height, floating gloss media unit",
+      "topFloorLounge": "65-inch slim panel, 1.22 m centre height, floating gloss media unit"
+    }
+  },
+  "siteRealismFixups": {
+    "screenReturnFaces": 300,
+    "oldDoorHardwareFaces": 12,
+    "wallLightFacesMoved": 2
+  },
+  "cleanSite": {
+    "utilities": {
+      "electric fence": 640,
+      "fence warning plates": 96,
+      "utility enclosures": 34,
+      "transfer pump": 12
+    },
+    "fittings": {
+      "removedPlaceholderFaces": 2851,
+      "bollards": 9,
+      "wallLights": [
+        [
+          9.65,
+          19.0,
+          2.2
+        ],
+        [
+          -0.62,
+          9.09,
+          2.2
+        ],
+        [
+          0.5,
+          17.93,
+          5.35
+        ],
+        [
+          1.5,
+          16.48,
+          6.95
+        ],
+        [
+          5.5,
+          18.6,
+          6.95
+        ]
+      ]
+    },
+    "solar": {
+      "collector": "1.50 x 1.62 m flat-plate, 10 degree tilt, aluminium stand"
+    }
+  },
+  "groundedFittings": {
+    "bollards": [
+      {
+        "at": [
+          -2.2,
+          8.3
+        ],
+        "ground": -0.598
+      },
+      {
+        "at": [
+          -2.2,
+          12.0
+        ],
+        "ground": -0.598
+      },
+      {
+        "at": [
+          -2.2,
+          16.5
+        ],
+        "ground": -0.598
+      },
+      {
+        "at": [
+          11.6,
+          16.5
+        ],
+        "ground": -0.6
+      },
+      {
+        "at": [
+          3.91,
+          7.6
+        ],
+        "ground": -0.15
+      },
+      {
+        "at": [
+          9.95,
+          19.4
+        ],
+        "ground": -0.15
+      },
+      {
+        "at": [
+          -1.7,
+          9.45
+        ],
+        "ground": -0.6
+      },
+      {
+        "at": [
+          -1.7,
+          14.9
+        ],
+        "ground": -0.6
+      },
+      {
+        "at": [
+          11.0,
+          14.0
+        ],
+        "ground": -0.6
+      }
+    ],
+    "rainHeads": [
+      {
+        "name": "Bath shower rain head [1784632]",
+        "armMetres": 0.29
+      },
+      {
+        "name": "GF shower rain head [1784259]",
+        "armMetres": 0.29
+      },
+      {
+        "name": "GF shower room shower rain head [1784290",
+        "armMetres": 0.29
+      },
+      {
+        "name": "Master shower rain head [1784585]",
+        "armMetres": 0.29
+      }
+    ]
+  },
+  "tvFit": {
+    "removedUnits": [
+      "Site realism | tvunit | tvunit"
+    ],
+    "liftedFaces": 312
+  },
+  "removedClutter": {
+    "Level -1 | details": 72,
+    "Level 0 | details": 32,
+    "Level 1 | details": 16,
+    "Level 2 | details": 4,
+    "Lights | hall | lighting": 8,
+    "Site fittings | Decor | dark aluminium": 1326,
+    "Site fittings | Decor | warm LED": 462
+  },
+  "solarAndExterior": {
+    "exterior": {
+      "sourceItems": 66,
+      "faces": 1246
+    },
+    "solar": {
+      "removedFaces": 903,
+      "pv": "10 x 1134 x 2252 mm mono modules, 6 x 12 cells, black frames, rails and legs",
+      "collectors": "SC-1a/b flat-plate, glazed absorber with riser fins, lagged flow and return to the 250 L cylinder"
+    }
+  },
+  "fixturesAndLamps": {
+    "basins": 6,
+    "wcs": 4,
+    "plinthFaces": 12,
+    "terraceSink": {
+      "loweredMetres": 0.84,
+      "rimHeightAboveFloor": 0.91,
+      "counterFaces": 14
+    },
+    "oldHoseTapFaces": 36,
+    "hoseTap": "brass bib tap on the parapet face, 0.6 m above the terrace floor",
+    "shades": 8,
+    "chandelier": "two-tier brass ring chandelier, 20 opal globes, lowest point 1.74 m above the floor"
+  },
+  "realismDetails": {
+    "showers": [
+      {
+        "shower": "Bath shower rain head [1784632",
+        "extent": [
+          -1.06,
+          15.54,
+          0.24,
+          16.48
+        ],
+        "screens": [
+          "+x"
+        ]
+      },
+      {
+        "shower": "GF shower rain head [1784259]",
+        "extent": [
+          0.25,
+          13.59,
+          0.92,
+          14.85
+        ],
+        "screens": []
+      },
+      {
+        "shower": "GF shower room shower rain hea",
+        "extent": [
+          2.44,
+          9.32,
+          3.44,
+          10.24
+        ],
+        "screens": []
+      },
+      {
+        "shower": "Master shower rain head [17845",
+        "extent": [
+          8.65,
+          17.36,
+          9.6,
+          18.68
+        ],
+        "screens": [
+          "+x"
+        ]
+      }
+    ],
+    "vanities": [
+      "Sink Vanity-Square D380 W500 [",
+      "Sink Vanity-Square D380 W500 [",
+      "Sink Vanity-Square D380 W500 [",
+      "Sink Vanity-Square D380 W500 ["
+    ],
+    "hob": [
+      2.79,
+      17.1,
+      0.922
+    ],
+    "kitchenStyling": [
+      "coffee",
+      "kettle",
+      "bowl",
+      "board",
+      "herbs",
+      "vase"
+    ],
+    "curtains": [
+      "primary",
+      "bed2",
+      "bed1",
+      "study",
+      "guest",
+      "lounge"
+    ],
+    "waterFeature": [
+      5.6,
+      3.7,
+      -0.59
+    ]
+  }
+}

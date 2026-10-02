@@ -1,0 +1,25 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {defaultDesign,validateDesign,rooms} from '../src/design.js';
+test('finish schedules round-trip and reject corrupted imports',()=>{const d=defaultDesign();assert.deepEqual(validateDesign(JSON.parse(JSON.stringify(d))),d);for(const patch of [{color:'javascript:x'},{roughness:4},{finish:'missing'}])assert.throws(()=>validateDesign({...d,walls:{...d.walls,...patch}}));assert.throws(()=>validateDesign({}));});
+test('room routes use valid coordinates and unique identifiers',()=>{assert.equal(new Set(rooms.map(r=>r.id)).size,rooms.length);for(const r of rooms){assert.equal(r.position.length,3);assert.ok(r.position.every(Number.isFinite));}});
+
+test('reference palettes change only their intended surface groups',async()=>{const {applyPalette,palettes}=await import('../src/design.js');const d=defaultDesign();const kitchen=applyPalette(d,'bermuda');assert.equal(kitchen.cabinet.finish,'bermuda');assert.equal(kitchen.hardware.finish,'brass');assert.deepEqual(kitchen.bedding,d.bedding);assert.deepEqual(kitchen.accent,d.accent);const bedroom=applyPalette(d,'blue');assert.equal(bedroom.headboard.finish,'navy');assert.deepEqual(bedroom.cabinet,d.cabinet);for(const id of Object.keys(palettes))assert.doesNotThrow(()=>validateDesign(applyPalette(d,id)));});
+
+test('every reference finish has its complete local texture set',async()=>{const {finishes}=await import('../src/design.js');const fs=await import('node:fs');for(const finish of Object.values(finishes)){if(finish.texture&&finish.texture!=='woven')for(const map of ['color','normal','roughness'])assert.ok(fs.existsSync(new URL(`../public/textures/${finish.texture}/${map}.jpg`,import.meta.url)),`${finish.name}: missing ${map}`);}});
+
+test('earlier six-group schedules retain selections and gain new reference groups',()=>{const base=defaultDesign();const legacy=Object.fromEntries(['walls','floor','wood','fabric','accent','doors'].map(k=>[k,base[k]]));legacy.floor={finish:'walnut',color:'#74604c',roughness:.7};const result=validateDesign(legacy);assert.deepEqual(result.floor,legacy.floor);assert.equal(result.cabinet.finish,'shaker');});
+
+test('older schedules gain dark terrace rails and translucent pergola glass',()=>{const old=defaultDesign();delete old.pergolaframe;delete old.pergolaglass;delete old.coping;const upgraded=validateDesign(old);assert.equal(upgraded.pergolaframe.finish,'blackmetal');assert.equal(upgraded.pergolaglass.finish,'smokeglass');assert.equal(upgraded.coping.finish,'charcoal');});
+
+test('saved schedules gain an independently selectable dark entrance feature wall',()=>{const old=defaultDesign();delete old.featurewall;const d=validateDesign(old);assert.equal(d.featurewall.finish,'charcoalstucco');d.featurewall={finish:'olive',color:'#68694e',roughness:.82};assert.equal(validateDesign(d).featurewall.finish,'olive');assert.equal(d.walls.finish,'chalk');});
+
+test('existing client schedules gain independent luxury interior selections',()=>{const old=defaultDesign();for(const key of ['livingfabric','livingrug','tvunit','tvwall','coffeetop','interiormetal'])delete old[key];const next=validateDesign(old);assert.equal(next.tvunit.finish,'glosswhite');assert.deepEqual(next.cabinet,old.cabinet);assert.deepEqual(next.bedding,old.bedding);});
+
+test('saved schedules gain independent dining upholstery and timber',()=>{const old=defaultDesign();delete old.diningfabric;delete old.diningwood;const next=validateDesign(old);assert.equal(next.diningfabric.finish,'mustardboucle');assert.equal(next.diningwood.finish,'smokedwalnut');assert.deepEqual(next.fabric,old.fabric);assert.deepEqual(next.wood,old.wood);});
+
+test('saved schedules gain ceiling and skirting finishes',()=>{const old=defaultDesign();delete old.ceiling;delete old.skirting;const next=validateDesign(old);assert.equal(next.ceiling.finish,'ceilingwhite');assert.equal(next.skirting.finish,'satinwhite');assert.deepEqual(next.walls,old.walls);});
+
+test('exterior stucco is its own group and older schedules keep their interior walls',()=>{const old=defaultDesign();delete old.render;const next=validateDesign(old);assert.equal(next.render.finish,'whitestucco');assert.deepEqual(next.walls,old.walls);assert.equal(next.accent.finish,'charcoalstucco');});
+
+test('exterior stucco is its own group and older schedules keep their interior walls',()=>{const old=defaultDesign();delete old.render;const next=validateDesign(old);assert.equal(next.render.finish,'whitestucco');assert.deepEqual(next.walls,old.walls);assert.equal(next.accent.finish,'charcoalstucco');});
+
+test('site schedules gain stone boundary, coping and water tank groups',()=>{const old=defaultDesign();for(const k of ['boundarywall','boundarypillar','boundarycoping','watertank','tankbase','frontdoor'])delete old[k];const next=validateDesign(old);assert.equal(next.boundarywall.finish,'ndarugurock');assert.equal(next.boundarypillar.finish,'stonecladding');assert.equal(next.watertank.finish,'tankblack');assert.equal(next.frontdoor.finish,'matteblack');assert.deepEqual(next.render,old.render);});

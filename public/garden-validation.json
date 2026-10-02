@@ -1,0 +1,39 @@
+{
+  "lawnStatus": "Grass in the user-marked large landscaped area; original tank-side planted strip retained",
+  "footprint": [
+    [
+      -2.86,
+      -2.62
+    ],
+    [
+      10.55,
+      -2.62
+    ],
+    [
+      10.55,
+      5.764
+    ],
+    [
+      6.582,
+      5.764
+    ],
+    [
+      6.582,
+      4.899
+    ],
+    [
+      1.039,
+      4.899
+    ],
+    [
+      1.039,
+      1.26
+    ],
+    [
+      -2.86,
+      1.26
+    ]
+  ],
+  "frontWalkway": "Original Subregions 2331126 and 2331133 are paving",
+  "kerbStatus": "Original geometry unchanged, exact vertex comparison passed"
+}

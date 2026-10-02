@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.blend1
+test-results/
+playwright-report/
+# Large local sources: the website only needs public/ and src/.
+*.blend
+*.fbx
+*.zip
+assets/
+__pycache__/
+.netlify/
