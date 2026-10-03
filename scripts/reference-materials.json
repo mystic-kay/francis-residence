@@ -387,5 +387,20 @@
     "texture": "oak_wood_planks",
     "scale": 0.65,
     "finish": "luxoak"
+  },
+  "stairs": {
+    "name": "Warm European oak boards",
+    "color": "#e6c8a3",
+    "roughness": 0.46,
+    "texture": "oak_wood_planks",
+    "scale": 0.65,
+    "finish": "luxoak"
+  },
+  "stairrail": {
+    "name": "Satin black",
+    "color": "#202327",
+    "roughness": 0.37,
+    "metalness": 0.65,
+    "finish": "blackmetal"
   }
 }
