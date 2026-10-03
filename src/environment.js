@@ -49,7 +49,8 @@ export function createEnvironment({scene,meshes,lowDetail}){
  }
  function buildLights(){
   // Front façade uplighters: white bay (wall y 9.16) and charcoal bay (wall y 7.76).
-  for(const x of [-.1,1.95])uplight(x,8.86,6);for(const x of [7.0,9.5])uplight(x,7.46,6);
+  // Kept clear of the front door (x -0.33..0.67): one on the wall left of it, one on the pier between the windows.
+  for(const x of [-.85,2.38])uplight(x,8.86,6);for(const x of [7.0,9.5])uplight(x,7.46,6);
   // Gate pillar lanterns (pillar tops at 2.55 m) and pools washing the boundary pillars and rear façade.
   lantern(10.74,-2.77,2.55);lantern(15.64,-2.77,2.55);
   for(const x of [-.07,3.46,7.0])pool(x,-2.53,new THREE.Vector3(0,0,-1),1.1,2.4);
