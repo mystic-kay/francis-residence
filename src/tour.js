@@ -25,7 +25,7 @@ export function createCinematicTour({camera,container,baseUrl,onStart,onStop,onE
    if(f.k==='fly'){segs.push({type:'fly',dur:FLY,from:pos.clone(),to:p,target:toWeb(f.target),room:f.name,caption:f.caption});pos=p;continue;}
    const d=p.distanceTo(pos);
    if(d>.02){segs.push({type:'walk',dur:d/WALK*(Math.abs(p.y-pos.y)>.2?1.4:1),from:pos.clone(),to:p});prevPos=pos;pos=p;}
-   if(f.k==='spin')segs.push({type:'spin',dur:SPIN,from:p,to:p,room:f.name,caption:f.caption,event:f.room==='primary'?'balcony':null,heading:f.face!==undefined?Math.atan2(-Math.cos(f.face),Math.sin(f.face)):prevPos?Math.atan2(-(p.x-prevPos.x),-(p.z-prevPos.z)):0});
+   if(f.k==='spin')segs.push({type:'spin',dur:SPIN,from:p,to:p,room:f.name,caption:f.caption,event:f.room==='primary'?'balcony':f.room==='terrace'?'eastwall':null,heading:f.face!==undefined?Math.atan2(-Math.cos(f.face),Math.sin(f.face)):prevPos?Math.atan2(-(p.x-prevPos.x),-(p.z-prevPos.z)):0});
   }
   // After the top-floor dining turn, pause facing the glass wall and watch it slide open before walking out.
   const k=segs.findIndex(s=>s.type==='spin'&&s.room==='Top-floor dining');
