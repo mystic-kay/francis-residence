@@ -225,6 +225,9 @@ bpy.ops.export_scene.gltf(filepath=os.path.join(root,'public','models','francis.
 with open(os.path.join(root,'scripts','reference-materials.json')) as f:reference_materials=json.load(f)
 def linear(c):return c/12.92 if c<=.04045 else ((c+.055)/1.055)**2.4
 for category,finish in reference_materials.items():
+ # Finish groups added by later scripts have no base material here; reuse or create one.
+ if category not in mats:
+  mats[category]=bpy.data.materials.get(category) or bpy.data.materials.new(category);mats[category].use_nodes=True
  material=mats[category];nodes=material.node_tree.nodes;links=material.node_tree.links;bs=nodes.get('Principled BSDF')
  color=tuple(linear(int(finish['color'][i:i+2],16)/255) for i in (1,3,5))+(1,)
  bs.inputs['Base Color'].default_value=color;material.diffuse_color=color;bs.inputs['Roughness'].default_value=finish['roughness'];bs.inputs['Metallic'].default_value=finish.get('metalness',0);bs.inputs['Coat Weight'].default_value=finish.get('clearcoat',0);bs.inputs['Sheen Weight'].default_value=.18 if category in ['livingfabric','livingpillows'] else 0

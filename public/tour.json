@@ -154,16 +154,8 @@
 },
 {
 "p": [
-6.125,
-16.125,
-1.6
-],
-"k": "walk"
-},
-{
-"p": [
-5.375,
-17.625,
+3.725,
+16.275,
 1.6
 ],
 "k": "walk"
@@ -171,38 +163,14 @@
 {
 "p": [
 3.725,
-17.475,
-1.6
-],
-"k": "walk"
-},
-{
-"p": [
-3.725,
-17.475,
+16.275,
 1.6
 ],
 "k": "spin",
 "room": "kitchen",
 "name": "Kitchen",
 "caption": "The kitchen: shaker cabinetry, black stone worktops and walnut counter stools. Cabinet, worktop and hardware finishes can all be changed.",
-"face": 5.8469
-},
-{
-"p": [
-3.725,
-16.425,
-1.6
-],
-"k": "walk"
-},
-{
-"p": [
-5.375,
-15.975,
-1.6
-],
-"k": "walk"
+"face": 0.3491
 },
 {
 "p": [

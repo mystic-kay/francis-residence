@@ -93,3 +93,21 @@
 .b4-speed{font-size:12px!important}
 .building .scene-heading,.building .hotspots,.building .guide,.building .view-tools{display:none!important}
 @media (max-width:640px){#build4d{--b4-name:96px;padding:10px}.b4-gantt{display:none}.b4-note{min-height:0}}
+
+/* Full view and mobile: the 3D scene takes the whole screen. */
+.studio-jump{display:none}
+.immersive .viewport{position:fixed!important;inset:0;z-index:60;height:100dvh!important;width:100vw}
+.immersive .scene-heading{display:none}
+@media(max-width:700px){
+ header{height:52px;padding:0 12px}.brand-sub,.project-label,.brand-icon{display:none}
+ main{margin:0}.viewport{height:calc(100dvh - 52px);min-height:0}
+ h1{font-size:22px;margin:6px 0}.scene-heading{top:14px;left:14px;transition:opacity .5s}.engaged .scene-heading{opacity:0}
+ .bottom-bar{display:none}
+ .view-tools{bottom:14px;left:8px;right:8px;transform:none;display:flex;justify-content:space-between;gap:2px}.view-tools button{flex:1;font-size:9.5px;padding:10px 2px}
+ .studio-jump{display:block;position:absolute;right:10px;top:10px;z-index:14;background:#10161cc0;color:#f4f1ea;font-size:10px;padding:7px 11px;border-radius:14px}
+ .touring .viewport,.building .viewport{position:fixed;inset:0;z-index:60;height:100dvh}
+ .touring .studio-jump,.building .studio-jump,.immersive .studio-jump{display:none}
+ #cine{padding:0 8px 10px}.cine-bar{gap:6px;padding:8px 10px}
+ .guide{left:10px;bottom:70px}.nav-build{padding:7px 10px;font-size:11px}
+}
+@media(max-width:900px) and (orientation:landscape) and (max-height:500px){header{display:none}.viewport{height:100dvh}.scene-heading{display:none}}

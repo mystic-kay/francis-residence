@@ -153,7 +153,8 @@ export function createConstruction({container,scene,meshes,renderer,orbit,onStar
  }
  function stop(){
   if(!active)return;active=false;playing=false;ui.hidden=true;document.body.classList.remove('building');orbit.autoRotate=false;
-  for(const [m,s] of snap){m.color.copy(s.color);m.map=s.map;m.needsUpdate=true;}snap.clear();
+  // Finishes are re-applied from the saved schedule by onStop, so changes made during the build are kept.
+  snap.clear();
   earth.visible=false;earth.geometry=earthOrig;if(groundRef)groundRef.geometry=groundOrig;pit.visible=blinding.visible=bars.visible=exc.visible=false;for(const h of heaps)h.visible=false;
   for(const pl of plants){pl.o.visible=true;pl.o.scale.setScalar(pl.scale);}
   for(const it of items){it.o.visible=true;for(const m of mats(it.o)){m.clippingPlanes=[];m.needsUpdate=true;}}

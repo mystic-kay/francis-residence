@@ -144,7 +144,9 @@ def build():
    r=reach(g,cur)
    mx,my=(x0+x1)/2,(y0+y1)/2
    # Open space matters most, but stay near the middle of the room.
-   best=max(((min(d[i][j],8)-math.hypot(centre((i,j))[0]-mx,centre((i,j))[1]-my)/.45,(i,j)) for (i,j) in r if x0<=centre((i,j))[0]<=x1 and y0<=centre((i,j))[1]<=y1),default=None)
+   # Keep the turn clear of the living-room chandelier, which hangs to 1.74 m at (8.05, 11.2).
+   clear=lambda c:floor!=0 or math.hypot(c[0]-8.05,c[1]-11.2)>1.25
+   best=max(((min(d[i][j],8)-math.hypot(centre((i,j))[0]-mx,centre((i,j))[1]-my)/.45,(i,j)) for (i,j) in r if x0<=centre((i,j))[0]<=x1 and y0<=centre((i,j))[1]<=y1 and clear(centre((i,j)))),default=None)
    if best:break
   if not best:print('SKIP room unreachable',rid);continue
   tgt=best[1]
