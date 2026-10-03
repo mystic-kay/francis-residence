@@ -650,27 +650,27 @@
 },
 {
 "p": [
-1.175,
-13.125,
+1.325,
+14.325,
 7.75
 ],
 "k": "walk"
 },
 {
 "p": [
-1.175,
-13.125,
+1.325,
+14.325,
 7.75
 ],
 "k": "spin",
-"room": "lounge",
-"name": "Top-floor lounge",
-"caption": "The top-floor lounge, with a 65-inch TV.",
-"face": 3.6652
+"room": "gym",
+"name": "Home gym",
+"caption": "The home gym: treadmill, bench, free weights and a full-height mirror, with a wall-mounted TV.",
+"face": 3.7525
 },
 {
 "p": [
-1.925,
+2.075,
 15.375,
 7.75
 ],

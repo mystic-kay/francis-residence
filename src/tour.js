@@ -6,7 +6,7 @@ const WALK=1.15,SPIN=13,HOLD=4,FLY=7;
 const toWeb=([x,y,z])=>new THREE.Vector3(x,z,-y);
 const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
 
-export function createCinematicTour({camera,container,baseUrl,onStart,onStop,openGate,toast}){
+export function createCinematicTour({camera,container,baseUrl,onStart,onStop,onEvent,openGate,toast}){
  let segs=[],total=0,t=0,playing=false,active=false,speed=1,yaw=0,pitch=-.06,lastCaption='';
  const ui=document.createElement('div');ui.id='cine';ui.hidden=true;
  ui.innerHTML=`<div class="cine-caption"><span class="cine-room"></span><p class="cine-text"></p></div>
@@ -25,8 +25,11 @@ export function createCinematicTour({camera,container,baseUrl,onStart,onStop,ope
    if(f.k==='fly'){segs.push({type:'fly',dur:FLY,from:pos.clone(),to:p,target:toWeb(f.target),room:f.name,caption:f.caption});pos=p;continue;}
    const d=p.distanceTo(pos);
    if(d>.02){segs.push({type:'walk',dur:d/WALK*(Math.abs(p.y-pos.y)>.2?1.4:1),from:pos.clone(),to:p});prevPos=pos;pos=p;}
-   if(f.k==='spin')segs.push({type:'spin',dur:SPIN,from:p,to:p,room:f.name,caption:f.caption,heading:f.face!==undefined?Math.atan2(-Math.cos(f.face),Math.sin(f.face)):prevPos?Math.atan2(-(p.x-prevPos.x),-(p.z-prevPos.z)):0});
+   if(f.k==='spin')segs.push({type:'spin',dur:SPIN,from:p,to:p,room:f.name,caption:f.caption,event:f.room==='primary'?'balcony':null,heading:f.face!==undefined?Math.atan2(-Math.cos(f.face),Math.sin(f.face)):prevPos?Math.atan2(-(p.x-prevPos.x),-(p.z-prevPos.z)):0});
   }
+  // After the top-floor dining turn, pause facing the glass wall and watch it slide open before walking out.
+  const k=segs.findIndex(s=>s.type==='spin'&&s.room==='Top-floor dining');
+  if(k>=0)segs.splice(k+1,0,{type:'look',dur:4.2,from:segs[k].to,to:segs[k].to,target:new THREE.Vector3(8.6,7.45,-15.0),event:'terrace',room:'Sliding doors',caption:'The aluminium glass wall slides open, joining the dining room to the pergola terrace.'});
   let acc=0;for(const s of segs){s.t0=acc;acc+=s.dur;}total=acc;
   const marks=$('.cine-marks');
   for(const s of segs)if(s.type==='spin'||s.type==='hold'||s.type==='fly'){const m=document.createElement('i');m.style.left=`${s.t0/total*100}%`;m.title=s.room;marks.append(m);}
@@ -55,6 +58,8 @@ export function createCinematicTour({camera,container,baseUrl,onStart,onStop,ope
    const climb=(s.to.y-s.from.y)/Math.max(.01,Math.hypot(s.to.x-s.from.x,s.to.z-s.from.z));pitch+=((Math.abs(climb)>.2?Math.sign(climb)*.22:-.06)-pitch)*Math.min(1,dt*2);
   }else if(s.type==='spin'){
    camera.position.copy(s.to);const target=s.heading+ease(u)*Math.PI*2;let diff=((target-yaw+Math.PI*3)%(Math.PI*2))-Math.PI;yaw+=diff*Math.min(1,dt*6);pitch+=(-.08-pitch)*Math.min(1,dt*2);
+  }else if(s.type==='look'){
+   camera.position.copy(s.to);const want=Math.atan2(-(s.target.x-s.to.x),-(s.target.z-s.to.z));let diff=((want-yaw+Math.PI*3)%(Math.PI*2))-Math.PI;yaw+=diff*Math.min(1,dt*2.5);pitch+=(-.04-pitch)*Math.min(1,dt*2);
   }else if(s.type==='hold'){
    camera.position.copy(s.to);camera.lookAt(s.look);const e=new THREE.Euler().setFromQuaternion(camera.quaternion,'YXZ');yaw=e.y;pitch=e.x;
   }else if(s.type==='fly'){
@@ -63,6 +68,8 @@ export function createCinematicTour({camera,container,baseUrl,onStart,onStop,ope
   }
   camera.quaternion.setFromEuler(new THREE.Euler(pitch,yaw,0,'YXZ'));
  }
+ // Doors open once their moment in the tour has been reached, and close again when scrubbing back.
+ const fired={};function events(){for(const s of segs)if(s.event){const on=t>=s.t0+.8;if(fired[s.event]!==on){fired[s.event]=on;onEvent?.(s.event,on);}}}
  function render(){
   const i=segAt(t),c=captionFor(i);
   if(c&&c.caption!==lastCaption){lastCaption=c.caption;$('.cine-room').textContent=c.room||'';$('.cine-text').textContent=c.caption;ui.querySelector('.cine-caption').classList.remove('show');void ui.offsetWidth;ui.querySelector('.cine-caption').classList.add('show');}
@@ -82,10 +89,10 @@ export function createCinematicTour({camera,container,baseUrl,onStart,onStop,ope
  const roomStarts=()=>segs.filter(s=>s.room).map(s=>s.t0);
  async function start(){
   await ready;if(!total){toast('Tour could not load.');return;}
-  active=true;playing=true;ui.hidden=false;document.body.classList.add('touring');onStart();t=0;lastCaption='';openGate();seek(0);
+  active=true;playing=true;ui.hidden=false;document.body.classList.add('touring');onStart();t=0;lastCaption='';for(const k in fired)delete fired[k];openGate();seek(0);
  }
  function stop(){if(!active)return;active=false;playing=false;ui.hidden=true;document.body.classList.remove('touring');onStop();}
- function update(dt){if(!active)return;if(playing){t+=dt*speed;if(t>=total){t=total-.001;playing=false;}}apply(dt*speed);render();}
+ function update(dt){if(!active)return;if(playing){t+=dt*speed;if(t>=total){t=total-.001;playing=false;}}apply(dt*speed);events();render();}
  ui.addEventListener('click',e=>{const a=e.target.closest('[data-a]')?.dataset.a;if(!a)return;
   if(a==='play'){if(t>=total-.01)seek(0);playing=!playing;}
   if(a==='exit')stop();

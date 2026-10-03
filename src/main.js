@@ -114,8 +114,8 @@ $('walk').onclick=()=>{if(!model)return;stopTour();if(!rooms.some(r=>r.id===acti
 canvas.addEventListener('pointerlockerror',()=>{exitWalk();toast('Mouse capture was blocked. Open the walkthrough directly in your browser.');});
 $('tour').onclick=()=>{if(tourTimer){stopTour();return;}if(mode==='walk')exitWalk();let i=0;goRoom(rooms[i],true);$('tour').classList.add('active');$('tour').textContent='Ⅱ Pause tour';tourTimer=setInterval(()=>{i=(i+1)%rooms.length;goRoom(rooms[i],true);},6500);};
 // The tour button plays the cinematic walkthrough (gate, every room with a 360 turn, stairs, terrace).
-const cinematic=createCinematicTour({camera,container:canvas.parentElement,baseUrl:import.meta.env.BASE_URL,toast,openGate:()=>{if(!homeControls.gateOpen)homeControls.setGate(true);},
- onStart:()=>{stopTour();if(mode==='walk')exitWalk();orbit.enabled=false;sliders.setAll(true);$('level').value='all';$('cutaway').checked=false;$('doorways').checked=true;activeRoom='tour';updateVisibility();updateAtmosphere();$('tour').classList.add('active');},
+const cinematic=createCinematicTour({camera,container:canvas.parentElement,onEvent:(id,open)=>sliders.set(id,open),baseUrl:import.meta.env.BASE_URL,toast,openGate:()=>{if(!homeControls.gateOpen)homeControls.setGate(true);},
+ onStart:()=>{stopTour();if(mode==='walk')exitWalk();orbit.enabled=false;sliders.setAll(false);$('level').value='all';$('cutaway').checked=false;$('doorways').checked=true;activeRoom='tour';updateVisibility();updateAtmosphere();$('tour').classList.add('active');},
  onStop:()=>{orbit.enabled=true;$('doorways').checked=false;sliders.setAll(false);updateVisibility();orbit.target.copy(camera.position).add(camera.getWorldDirection(new THREE.Vector3()).multiplyScalar(3));$('tour').classList.remove('active');}});
 $('tour').onclick=()=>{if(construction.active)construction.stop();cinematic.active?cinematic.stop():cinematic.start();};
 // 4D construction simulation: exterior orbit view, full model, no cutaway; restores everything on exit.

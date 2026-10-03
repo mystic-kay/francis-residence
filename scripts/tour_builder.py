@@ -68,7 +68,9 @@ def reach(free,a):
   for di in (-1,0,1):
    for dj in (-1,0,1):
     n=(c[0]+di,c[1]+dj)
-    if n not in seen and 0<=n[0]<nx and 0<=n[1]<ny and free[n[0]][n[1]]:seen.add(n);st.append(n)
+    if n in seen or not(0<=n[0]<nx and 0<=n[1]<ny) or not free[n[0]][n[1]]:continue
+    if di and dj and not(free[c[0]+di][c[1]] and free[c[0]][c[1]+dj]):continue
+    seen.add(n);st.append(n)
  return seen
 def astar(free,dist,a,b):
  nx,ny=len(free),len(free[0]);g={a:0};prev={};pq=[(0,a)]
@@ -114,7 +116,7 @@ ROOMS=[
  (1,'study','Study',(6.4,15.3,10.2,18.5),'A quiet study at the back of the first floor.'),
  (1,'bed1','Bedroom one',(2.5,15.3,6.0,18.5),'Bedroom one, with a slim wall-mounted TV and a sage panelled bed wall.'),
  (1,'bed2','Bedroom two',(-1.1,9.4,3.3,13.2),'Bedroom two looks out to the front garden.'),
- (2,'lounge','Top-floor lounge',(-1.0,9.6,3.3,14.7),'The top-floor lounge, with a 65-inch TV.'),
+ (2,'gym','Home gym',(-1.0,12.62,2.1,14.72),'The home gym: treadmill, bench, free weights and a full-height mirror, with a wall-mounted TV.'),
  (2,'roofdining','Top-floor dining',(1.3,15.4,6.0,18.5),'An indoor-outdoor dining room under the sky, with the same walnut and bouclé set.'),
  (2,'terrace','Pergola terrace',(6.4,8.2,10.2,14.6),'The pergola terrace with glass balustrades: the best view in the house. You can change glass tints and pergola frames under Materials.')]
 STAIR=lambda z:[(5.49,13.30,z),(5.49,12.98,z),(5.49,10.58,z+1.40),(5.30,10.05,z+1.57),(4.40,10.05,z+1.57),(4.19,10.68,z+1.57),(4.19,13.38,z+3.15 if z<3 else z+3.0),(4.19,13.80,z+(3.15 if z<3 else 3.0))]
