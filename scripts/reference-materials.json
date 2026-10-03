@@ -363,5 +363,13 @@
     "texture": "interior_tiles",
     "scale": 0.39,
     "finish": "porcelaintile"
+  },
+  "entrydoor": {
+    "name": "Smoked walnut",
+    "color": "#9c7652",
+    "roughness": 0.55,
+    "texture": "oak_veneer_01",
+    "scale": 1,
+    "finish": "smokedwalnut"
   }
 }
