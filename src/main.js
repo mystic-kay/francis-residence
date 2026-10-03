@@ -59,7 +59,7 @@ new GLTFLoader().load(`${import.meta.env.BASE_URL}models/francis.glb`,gltf=>{
  model.traverse(o=>{if(!o.isMesh)return;meshes.push(o);o.castShadow=true;o.receiveShadow=true;const category=o.userData.category||o.material.name;o.userData.category=category;if(['glass','pergolaglass','balconyglass'].includes(category))o.castShadow=false;
  const materials=Array.isArray(o.material)?o.material:[o.material];
  for(const original of materials){const m=original.clone();m.side=THREE.DoubleSide;if(category==='glass'){if('transmission' in m)m.transmission=0;m.transparent=true;m.opacity=.23;m.depthWrite=false;m.roughness=.1;}if(category==='metal'){m.color.set('#222429');m.metalness=.7;m.roughness=.4;}if(design[category]){groupMaterials[category]??=[];groupMaterials[category].push(m);}if(Array.isArray(o.material)){o.material=o.material.map(v=>v===original?m:v);}else o.material=m;}
- if(['walls','floor','bedfloor','doors','wood','fabric','headboard','ceramic','cabinet','counter','bedwall','featurewall','balconyglass','livingfabric','tvunit','coffeetop','livingfloor','diningfabric','diningwood','render'].includes(category))colliders.push(o);
+ if(['walls','floor','bedfloor','doors','wood','fabric','headboard','ceramic','cabinet','counter','bedwall','featurewall','balconyglass','livingfabric','tvunit','coffeetop','livingfloor','diningfabric','diningwood','render','steps','porch'].includes(category))colliders.push(o);
  });
  for(const g of Object.keys(design))apply(g);
  picker.attach();picker.maybeGuide();sliders.attach();surroundingsLife.attach();updateAtmosphere();

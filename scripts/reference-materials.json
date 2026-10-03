@@ -371,5 +371,21 @@
     "texture": "oak_veneer_01",
     "scale": 1,
     "finish": "smokedwalnut"
+  },
+  "steps": {
+    "name": "Charcoal paving",
+    "color": "#777c80",
+    "roughness": 0.9,
+    "texture": "concrete_pavement",
+    "scale": 0.7,
+    "finish": "darkpaver"
+  },
+  "porch": {
+    "name": "Warm European oak boards",
+    "color": "#e6c8a3",
+    "roughness": 0.46,
+    "texture": "oak_wood_planks",
+    "scale": 0.65,
+    "finish": "luxoak"
   }
 }
